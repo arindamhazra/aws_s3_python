@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AWS Bucket List App</title>
+
+
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/narrow-jumbotron.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <header class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/showSignIn">SignIn</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/showSignUp">SignUp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/showAbout">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/showContactUS">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">AWS Bucket List App</h3>
+      </header>
+
+      <main role="main">
+
+        <div class="jumbotron">
+          <h1 class="display-3">Get an AWS Bucket Today</h1>
+          <p class="lead">Get an AWS Bucket today and start saving your improtant data on cloud at almost no cost.Yes, it is too cheap to believe!</p>
+          <p><a class="btn btn-lg btn-success" href="/showSignUp" role="button">Sign up today</a></p>
+        </div>
+
+        <div class="row marketing">
+          <h4>My Buckets</h4>
+        </div>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Bucket Name
+                </th>
+                <th>
+                  Creation Date
+                </th>
+                <th>
+                  Owner Name
+                </th>
+              </tr>
+            </thead>
+          <tbody>
+            {% for bucket in bucket_list %}
+            <tr>
+                <td>
+<!--                  <a href="somelink url">Link</a> -->
+                  {{bucket['Name']}}
+                </td>
+                <td>
+                  {{bucket['CreationDate']}}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        <!--  {{bucket_list}} -->
+          <!-- <div class="col-lg-6">
+            <h4>Subheading</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+            <h4>Subheading</h4>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+            <h4>Subheading</h4>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          </div>
+
+          <div class="col-lg-6">
+            <h4>Subheading</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+            <h4>Subheading</h4>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+            <h4>Subheading</h4>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          </div> -->
+        </div>
+
+      </main>
+
+      <footer class="footer">
+        <p>&copy; Company 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>
+</html>
